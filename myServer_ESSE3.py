@@ -1,24 +1,27 @@
 # -*- coding: utf-8 -*-
 
-import json, sys, re, urllib, urllib2, socket, json, pydoc, cgi, os, time, inspect
-from hashlib import md5
-from datetime import datetime
-from bottle import Bottle,get,post,request
+#import json, sys, re, urllib, urllib2, socket, json, pydoc, cgi, os, time, inspect
+#from hashlib import md5
+#from datetime import datetime
+#from bottle import Bottle,get,post,request
+#from bottle import request
 
 from flask import Flask
-from flask import Response
+from flask import json
 from flask import request
+#from flask import Response
+#from flask import request
 from flask import jsonify
 from flask import current_app
 from flask import make_response
-from flask import session
-from flask import url_for
-from flask import redirect
-from flask import render_template
-from flask import abort
-from flask import g
-from flask import flash
-from flask import _app_ctx_stack
+#from flask import session
+#from flask import url_for
+#from flask import redirect
+#from flask import render_template
+#from flask import abort
+#from flask import g
+#from flask import flash
+#from flask import _app_ctx_stack
 from datetime import timedelta
 from flask_cors import CORS
 
@@ -162,4 +165,4 @@ def pagamenti():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host='193.205.230.8',port=5000)

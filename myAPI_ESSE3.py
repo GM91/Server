@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 import json
 import pycurl
-from flask import jsonify
+#from flask import jsonify
 from pycurl import Curl
 from StringIO import StringIO
 import re
-from bs4 import BeautifulSoup
-import urllib2
-import urllib
+#from bs4 import BeautifulSoup
+#import urllib2
+#import urllib
 
 class Scraper:
 
@@ -238,10 +238,10 @@ class Scraper:
         td_list3 = p.findall(tr_list[3]) #Preleviamo la lista dei td della quarta riga
 
 #Preleviamo i contenuti dei tag <img> dei vari td e rimpiazziamo i valori che non ci servono
-        img0 = td_list0[1].replace('<img src=\"images/stato_esito_r.gif\">&nbsp;scadute&nbsp;-&nbsp;','')
-        img1 = td_list1[1].replace('<img src=\"images/stato_esito_r.gif\">&nbsp;','')
-        img2 = td_list2[1].replace('<img src=\"images/stato_esito_v.gif\">&nbsp;','').replace('&nbsp;appelli disponibili','').replace('<img src="images/stato_esito_r.gif">&nbsp;','')
-        img3 = td_list3[1].replace('<img src=\"images/stato_esito_r.gif\">&nbsp;','').replace('&nbsp;prenotazioni','')
+        img0 = td_list0[1].replace('<img src=\"images/stato_esito_r.gif\">&nbsp;scadute&nbsp;-&nbsp;','').replace('<img src="images/stato_esito_a.gif">&nbsp;','') #Tasse
+        img1 = td_list1[1].replace('<img src=\"images/stato_esito_r.gif\">&nbsp;','').replace('<img src="images/stato_esito_a.gif">&nbsp;','') #Piano Carriera
+        img2 = td_list2[1].replace('<img src=\"images/stato_esito_v.gif\">&nbsp;','').replace('&nbsp;appelli disponibili','').replace('<img src="images/stato_esito_r.gif">&nbsp;','').replace('<img src="images/stato_esito_a.gif">&nbsp;','') #Appelli Disponibili
+        img3 = td_list3[1].replace('<img src=\"images/stato_esito_r.gif\">&nbsp;','').replace('&nbsp;prenotazioni','').replace('<img src="images/stato_esito_a.gif">&nbsp;','').replace('1&nbsp;','') #Iscrizioni
 
         lista_0 = [td_list0[0],td_list1[0],td_list2[0],td_list3[0]] #Inseriamo i primi valori dei td in una lista
         lista_1 = [img0,img1,img2,img3] #Inseriamo i valori dei tag <img> in un'altra lista
